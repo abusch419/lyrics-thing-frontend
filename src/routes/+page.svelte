@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import type { GeneratedLyrics } from "$lib/types";
   import LyricGenerator from "../components/LyricGenerator.svelte";
-  import { API_URL, API_TOKEN } from "$lib/config";
+  import { API_URL } from "$lib/config";
 
   // Add interface for form data
   interface FormData {
