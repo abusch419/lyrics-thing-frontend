@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost:5173",
     "http://localhost:10000",
-    "https://lyrics-thing-backend.onrender.com"  # Add your Render frontend URL
+    "https://lyrics-thing-frontend.onrender.com"  # Replace with your actual frontend URL
 ]
 
 app.add_middleware(

@@ -8,10 +8,13 @@ export default defineConfig({
 	},
 	server: {
 		proxy: {
-			'/api': {
-				target: 'http://localhost:8000',
-				changeOrigin: true
-			}
+			// Only use proxy in development
+			...(process.env.NODE_ENV !== 'production' ? {
+				'/api': {
+					target: 'http://localhost:8000',
+					changeOrigin: true
+				}
+			} : {})
 		}
 	}
 });

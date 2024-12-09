@@ -2,10 +2,22 @@
   import { onMount } from "svelte";
   import type { GeneratedLyrics } from "$lib/types";
   import LyricGenerator from "../components/LyricGenerator.svelte";
-  import { API_URL } from "$lib/config";
+  import { API_URL, API_TOKEN } from "$lib/config";
+
+  // Add interface for form data
+  interface FormData {
+    prompt: string;
+    // Add other form fields as needed
+  }
+
+  let formData: FormData = {
+    prompt: "",
+  };
 
   async function generateLyrics() {
     try {
+      console.log("Making request to:", `${API_URL}/api/generate-lyrics`);
+
       const response = await fetch(`${API_URL}/api/generate-lyrics`, {
         method: "POST",
         headers: {
@@ -13,9 +25,12 @@
         },
         body: JSON.stringify(formData),
       });
-      // Rest of your code...
+
+      console.log("Response status:", response.status);
+      const data = await response.json();
+      console.log("Response data:", data);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error details:", error);
     }
   }
 </script>
