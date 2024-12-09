@@ -16,9 +16,9 @@
 
   async function generateLyrics() {
     try {
-      console.log("Making request to:", `${API_URL}/api/generate-lyrics`);
+      console.log("Making request to:", `${API_URL}/generate-lyrics`);
 
-      const response = await fetch(`${API_URL}/api/generate-lyrics`, {
+      const response = await fetch(`${API_URL}/generate-lyrics`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
