@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { GeneratedLyrics } from "$lib/types";
+  import { API_URL } from "$lib/config";
 
   let prompt = "";
   let loading = false;
@@ -13,7 +14,7 @@
     error = null;
 
     try {
-      const response = await fetch("/generate-lyrics", {
+      const response = await fetch(`${API_URL}/generate-lyrics`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
