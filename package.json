@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "npm run generateApiTypes && vite dev",
+		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
@@ -14,7 +14,7 @@
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
 		"generateApiTypes": "npm run generateJsonSchema && npm run convertJsonSchema",
-		"generateJsonSchema": "cd ../backend && python main.py --save-json-schemas && cd -",
+		"generateJsonSchema": "python main.py --save-json-schemas && cd -",
 		"convertJsonSchema": "json2ts --input ./src/lib/ApiTypes.json --output ./src/lib/ApiTypes.ts"
 	},
 	"devDependencies": {
