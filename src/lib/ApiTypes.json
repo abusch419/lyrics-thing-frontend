@@ -1,0 +1,26 @@
+{
+  "$defs": {
+    "HelloWorldResponse": {
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "message"
+      ],
+      "title": "HelloWorldResponse",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "helloWorldResponse": {
+      "$ref": "#/$defs/HelloWorldResponse"
+    }
+  },
+  "required": [
+    "helloWorldResponse"
+  ],
+  "title": "ApiTypes",
+  "type": "object"
+}
